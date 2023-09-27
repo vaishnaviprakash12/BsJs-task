@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="showDate()">Show Date</button><br><br>
+        <p id="outpu"></p>
+        <button onclick="showTime()">Show Time</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function showDate() {
+            const currentDate = new Date();
+            const outputElement = document.getElementById('outpu');
+            const day = currentDate.getDate();
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const month = monthNames[currentDate.getMonth()];
+            const year = currentDate.getFullYear();
+            outputElement.textContent = `Current Date: ${day}/${month}/${year}`;
+        }
+
+        function showTime() {
+            const currentTime = new Date();
+            const outputElement = document.getElementById('output');
+            outputElement.textContent = `Current Time: ${currentTime.toString()}`;
+        }
+    </script>
+</body>
+</html>
